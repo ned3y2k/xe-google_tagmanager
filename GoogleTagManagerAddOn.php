@@ -37,7 +37,13 @@ html;
 		$this->addon_info = $addon_info;
 		$this->includeAdmin = $addon_info->include_admin == 'Y';
 	}
-	function before_module_init(ModuleHandler $moduleHandler) {
+
+	/**
+	 * @param ModuleHandler $moduleHandler
+	 *
+	 * @return bool
+	 */
+	function before_module_init($moduleHandler) {
 		/** @var stdClass $logged_info */
 		$logged_info = $this->context()->get('logged_info');
 		$module = $this->context()->get('module');
